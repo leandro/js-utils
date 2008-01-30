@@ -1,3 +1,11 @@
+function sequence(a, b) { // 2008-01-30
+	if(isNaN(a) || isNaN(b)) return [];
+	a = +a;
+	b = +b;
+	for(var i = a, r = []; i < a + b; r[r.length] = i++);
+	return r;
+}
+
 function arrayfy_arguments($_1_args)
 {
 	var
