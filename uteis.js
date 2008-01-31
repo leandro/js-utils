@@ -1,3 +1,16 @@
+Array.prototype.indexesOf = function(value) { // 2008-01-30
+	var i = 0, t = this.length, r = [];
+	for(; i < t; i++) { if(this[i] === value) r[r.length] = i; }
+	return r;
+}
+
+Array.prototype.remove = function(indexes) { // 2008-01-30
+	indexes = indexes instanceof Array ? indexes : [indexes];
+	var t = indexes.length, r = [];
+	for(; --t > -1;) r[r.length] = this.splice(indexes[t], 1);
+	return r.reverse();
+}
+
 function sequence(a, b) { // 2008-01-30
 	if(isNaN(a) || isNaN(b)) return [];
 	a = +a;
